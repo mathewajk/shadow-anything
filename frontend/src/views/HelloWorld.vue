@@ -317,8 +317,8 @@ a:hover .icon {
   grid-template-columns: 1fr;
   gap: 20px;
 }
-/* 
-.pitch-grid {
+
+/* .pitch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );
   gap: 20px;
