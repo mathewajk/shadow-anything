@@ -9,10 +9,11 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Copy local code to the container image.
-COPY backend ./
+COPY . ./
 
 # Install project dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r backend/requirements.txt
+RUN apt-get update && apt-get install -y praat && apt-get install -y ffmpeg
 
 # Run the web service on container startup.
-CMD ["gunicorn", "main:app"]
+CMD ["gunicorn", "backend.app:app"]
