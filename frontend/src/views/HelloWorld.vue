@@ -94,7 +94,11 @@ export default {
     AudioRecorder
   },
   computed: {
-    ...mapState(useChartStore, ['pitchChartOptions', 'formantChartOptions']),
+    ...mapState(useChartStore, [
+      'pitchChartOptions', 
+      'formantChartOptions', 
+      'apiUrl'
+    ]),
     pitchCharts() {
       let charts = []
       if (this.showSeparate) {
@@ -187,7 +191,7 @@ export default {
       let form = new FormData();
       form.append('audio', data, 'data.mp3');
       form.append('title', 'data.mp3');
-      fetch('http://127.0.0.1:5000/pitch', {
+      fetch(`${this.apiUrl}/pitch`, {
         method: 'POST',
         body: form
       })

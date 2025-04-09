@@ -12,7 +12,7 @@ app.config.from_object('settings')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # enable CORS
-CORS(app, resources={r'/*': {'origins': '*'}})
+CORS(app, resources={r'/*': {'origins': app.config['CLIENT_URL']}})
 
 @app.route('/', methods=['GET'])
 def root():

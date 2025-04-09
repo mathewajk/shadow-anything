@@ -3,6 +3,8 @@ import { defineStore } from 'pinia'
 
 export const useChartStore = defineStore('chart', () => {
 
+  const apiUrl = import.meta.env.VITE_API_URL
+
   const baseChartOptions = {
     responsive: true,
     maintainAspectRatio: true,
@@ -75,5 +77,5 @@ export const useChartStore = defineStore('chart', () => {
     }
   }
 
-  return { pitchChartOptions, formantChartOptions }
+  return { pitchChartOptions, formantChartOptions, apiUrl }
 })
