@@ -12,8 +12,8 @@ WORKDIR /app
 COPY . ./
 
 # Install project dependencies
-RUN pip install --no-cache-dir -r backend/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 RUN apt-get update && apt-get install -y praat && apt-get install -y ffmpeg
 
 # Run the web service on container startup.
-CMD ["gunicorn", "backend.app:app"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]

@@ -8,7 +8,7 @@ import numpy as np
 UPLOAD_FOLDER = 'files'
 
 app = Flask(__name__)
-app.config.from_object(__name__)
+app.config.from_object('settings')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # enable CORS
