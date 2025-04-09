@@ -1,5 +1,7 @@
 # Shadow Anything
 
+**Try me:** https://shadow.viridian.fish/
+
 ![Shadow Anything](shadow.png)
 
 This webapp works best with audio routers like [Loopback](https://rogueamoeba.com/loopback/) for macOS (or a patient friend). It allows you to record in a reference word, sentence, etc., then record your own voice for comparison.
