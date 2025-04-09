@@ -1,5 +1,5 @@
-import os
+from environs import env
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "default_secret")
-DEBUG = os.environ.get("DEBUG", "False") == "True"
-CLIENT_URL = os.environ.get("CLIENT_URL", "http://localhost:5173")
+SECRET_KEY = env.str('FLASK_SECRET_KEY', default='default')
+DEBUG = env.bool('FLASK_DEBUG', default=False)
+ALLOWED_HOSTS = env.list('FLASK_ALLOWED_HOSTS', default=['http://localhost:5173'])
