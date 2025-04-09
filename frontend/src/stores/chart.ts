@@ -3,8 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useChartStore = defineStore('chart', () => {
 
-  // Giving up on this for now...
-  const apiUrl = import.meta.env.VITE_API_URL || 'https://shadow-anything-production.up.railway.app';
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const baseChartOptions = {
     responsive: true,
